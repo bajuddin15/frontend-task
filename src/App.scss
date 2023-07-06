@@ -1,0 +1,323 @@
+/* ================STYLE OF COMPLETE APPLICATION===================== */
+@import "./css-config/mixins.scss";
+
+.auth-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+
+  .auth-left {
+    display: none;
+
+    @include md {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: black;
+      color: white;
+      border-radius: 0 50px 50px 0;
+
+      .auth-brand-logo {
+        font-size: 45px;
+        font-weight: bold;
+        letter-spacing: 2px;
+      }
+    }
+  }
+  .auth-right {
+    flex: 1;
+    // background-color: rgba(255, 254, 254, 0.5);
+    background-color: #f4f7fc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // padding: 20px;
+    overflow: auto;
+
+    @include md {
+      flex: 2;
+    }
+
+    .auth-right-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      padding: 20px;
+      margin-top: -290px;
+      overflow: auto;
+
+      @include md {
+        width: 500px;
+        margin-top: 30px;
+        gap: 20px;
+      }
+
+      .auth-right-item {
+        display: flex;
+        gap: 10px;
+        .auth-name {
+          font-size: 22px;
+          font-weight: bold;
+          text-align: center;
+
+          @include md {
+            font-size: 32px;
+            gap: 20px;
+          }
+        }
+        .auth-desc {
+          font-size: 18px;
+          text-align: center;
+        }
+        .sign-google,
+        .sign-apple {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 10px 25px;
+          border-radius: 10px;
+          background: white;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+            rgba(0, 0, 0, 0.23) 0px 3px 6px;
+          color: rgb(153, 152, 152);
+          //   background: rgba(230, 210, 210, 0.2);
+
+          @include md {
+          }
+        }
+        .auth-input {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+      .auth-inputs {
+        padding: 30px;
+        margin: 10px 0px;
+        border-radius: 20px;
+        // background: rgba(241, 235, 235, 0.2);
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+          rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+        input {
+          padding: 8px;
+        }
+
+        .auth-btn {
+          padding: 10px 0px;
+          background: rgba(22, 19, 19, 1);
+          color: white;
+          font-size: 15px;
+          font-weight: bold;
+          cursor: pointer;
+          border: none;
+          border-radius: 10px;
+
+          @include md {
+            font-size: 18px;
+          }
+        }
+      }
+
+      .auth-other {
+        display: flex;
+        flex-direction: column;
+        @include md {
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+.home {
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+  background: rgba(196, 196, 196, 0.3);
+
+  .sidebar:hover {
+    // width: 300px;
+    // transition: 0.5s;
+
+    .logo {
+      font-size: 30px;
+      font-weight: bold;
+      padding: 20px 16px;
+      display: block;
+      transition: all 0.4s ease-in;
+    }
+  }
+  .main-content {
+    width: 100%;
+  }
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  // width: 110px;
+  width: 300px;
+  height: 95vh;
+  padding: 0 1.7rem;
+  color: #fff;
+  overflow: hidden;
+  transition: all 0.5s linear;
+  background: rgb(31, 30, 31);
+  border-radius: 20px;
+
+  .logo {
+    // height: 80px;
+    // padding: 16px;
+    // font-size: 20px;
+    // font-weight: bold;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 20px 16px;
+    display: block;
+  }
+
+  .menu {
+    height: 88%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding: 1rem;
+      margin: 8px 0;
+      border-radius: 8px;
+      transition: all 0.5s ease-in-out;
+
+      a {
+        color: rgb(177, 171, 171);
+        font-size: 14px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+
+        span {
+          overflow: hidden;
+          font-size: 16px;
+          font-weight: normal;
+          letter-spacing: 1px;
+
+          &:hover {
+            font-weight: bold;
+            color: white;
+          }
+        }
+        i {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .logout {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding-bottom: 20px;
+    }
+  }
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 1rem;
+  position: sticky;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  background: white;
+
+  .header-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: black;
+  }
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      padding: 5px 20px;
+      border-radius: 20px;
+      border: 1px solid lightgrey;
+      background: white;
+
+      input {
+        border: none;
+        outline: none;
+        width: 100%;
+        height: 100%;
+      }
+      i {
+        font-size: 20px;
+      }
+    }
+    .bell-icon {
+      font-size: 20px;
+    }
+    .profile-img {
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      object-fit: cover;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.dashboard {
+  .card-wrapper {
+    height: 130px;
+    width: 100%;
+    background-color: red;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: rgb(87, 86, 86);
+
+    i {
+      font-size: 18px;
+    }
+
+    .title {
+      font-size: 18px;
+    }
+    .value {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
+}
